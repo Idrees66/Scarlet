@@ -28,7 +28,12 @@ const GlobalStyles = StyleSheet.create({
         color:"white",
         fontSize:16,
         fontWeight:"bold",
-},
+    },
+    h5:{
+        color:"white",
+        fontSize:14,
+        fontWeight:"bold",
+    },
     textInput:{
         padding:10,
         color:"white",
@@ -63,6 +68,15 @@ const GlobalStyles = StyleSheet.create({
         alignSelf:"center",
         // backgroundColor:"coral",
         //   borderRadius:70
+    },
+    social:{
+        width:20,
+        height:20,
+    },
+    center: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        
     }
 })
 

@@ -2,12 +2,17 @@ import React from 'react'
 import { StyleSheet, Text, View,ImageBackground,Image,TouchableOpacity,TextInput, KeyboardAvoidingView  } from 'react-native'
 import Button from '../components/Button';
 import Style from "../Styles/GlobalStyles";
+import * as Animatable from 'react-native-animatable';
 
 const SignUp = ({navigation}) => {
     return (
         <ImageBackground source={require("../assets/bg.png")} style={[Style.container,]} >
-       <View style={{flex:1,justifyContent:"space-between",}} >
-            <Text style={[Style.h1,{width:160,}]}>Create Your Account</Text>
+       <Animatable.View animation="zoomIn" easing="ease-out" 
+       style={{flex:1,justifyContent:"space-between",}} >
+           <Animatable.View animation="slideInLeft" easing="ease-out" delay={500} >
+                <Text style={[Style.h2,{width:"70%",}]}>Create Your </Text>
+                <Text style={[Style.h1,{width:"80%",fontWeight:"bold"}]}>Company Account</Text>
+           </Animatable.View>
             <KeyboardAvoidingView behavior="padding" 
              style={{width:"90%",alignSelf: 'center',}}>
                 <View style={Style.inputContainer}>
@@ -37,17 +42,17 @@ const SignUp = ({navigation}) => {
             </KeyboardAvoidingView>
 
             <View style={{width:"90%",alignSelf: 'center',}}>
-            <Button text="NEXT" size="large" onPress={()=>navigation.navigate("SignUp")} />
+            <Button text="NEXT" size="medium" onPress={()=>navigation.navigate("SignUp")} />
             </View>
 
-            <View >
+            <View  >
             <Text style={{alignSelf: 'center', color:"white"}} >Already have an account?</Text>
             <Button text="SIGN IN" size="small" />
             <Text style={{alignSelf: 'center', color:"white"}}>Monthly Subscription $25USD </Text>
             <Text style={{alignSelf: 'center', color:"white"}}>and $2USD per Employee</Text>
             
             </View>
-            </View>
+            </Animatable.View>
         </ImageBackground>
     )
 }

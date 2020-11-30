@@ -11,10 +11,11 @@ const Dashboard = ({navigation}) => {
               <View style={{flex:4,justifyContent:"center"}} >
               <Animatable.Image   animation="pulse" easing="ease-out" iterationCount="infinite"
               source={require("../assets/logo.png")} style={{width:"50%",alignSelf: 'center'}} />
-              <View style={{paddingTop:30,justifyContent:"space-around",height:200}}>
-                <Button text="SEND A TIP" size="medium" onPress={()=>navigation.navigate("Bank_Detail")}  />
+                <Animatable.View  animation="fadeIn" easing="ease-out" duration={3000} 
+               style={{paddingTop:30,justifyContent:"space-around",height:200}}>
+                <Button text="SEND A TIP" size="medium" onPress={()=>navigation.navigate("Map")}  />
                 <Button text="RECIEVE A TIP" size="medium" onPress={()=>navigation.navigate("SignIn")} />
-              </View>
+              </Animatable.View>
             </View>
             <View style={{flex:1}} />
         </ImageBackground>
