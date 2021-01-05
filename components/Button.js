@@ -19,7 +19,7 @@ const Button = ({ text, onPress,size }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={[styles.btnContainerStyle, containerStyle,btnWidth]}>
-        <Text style={[styles.btnTextStyle,{color: "black"}]}> {text} </Text>
+        <Text style={[styles.btnTextStyle]}> {text} </Text>
       </View>
     </TouchableOpacity>
   )
@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
      alignSelf: 'center',
     //  borderColor:"yellow"
     elevation:10,
+    borderRightWidth:5,borderLeftWidth:5,
+    borderColor:"teal"
   },
   btnTextStyle: {
    
@@ -46,9 +48,12 @@ const styles = StyleSheet.create({
     // textTransform: 'uppercase',
     fontWeight:"bold",
     textAlign: 'center',
-   
+    color:"teal",
     // fontFamily: 'Quicksand-Medium'
   }
 })
 
 export default Button
+
+
+// "react-native-safe-area-context": "^3.0.7",

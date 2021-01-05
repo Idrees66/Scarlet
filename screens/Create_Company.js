@@ -5,7 +5,7 @@ import Style from "../Styles/GlobalStyles";
 
 const Create_Company = ({navigation}) => {
     return (
-        <ImageBackground source={require("../assets/bg.png")} style={[Style.container,]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[Style.container,]} >
        <View style={{justifyContent:"space-around",height:"85%"}} >
             <Text style={[Style.h1,{width:160,}]}>Create  Company</Text>
             <KeyboardAvoidingView behavior="padding" 

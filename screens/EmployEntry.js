@@ -48,7 +48,7 @@ const Customer = ({navigation,onPress})=>{
             <View style={{flexDirection: 'row',justifyContent:"space-between",}}>
                 <View style={{flex:1}}>
                     <View style={{flexDirection: 'row',}}>
-                        <Text style={styles.text}>Tip Amount: </Text>
+                        <Text style={styles.text}>Amount Earned: </Text>
                         <Text style={styles.textBold}> 50$</Text>
                     </View>
                     <View style={{flexDirection: 'row',}}>
@@ -83,10 +83,10 @@ const  EmployEntry = () => {
 
 
     return (
-        <ImageBackground source={require("../assets/backround.png")} style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
         <View style={{width:"97%",height:"95%",}}>
         <SearchBar
-            placeholder="Search Customer..."
+            placeholder="Search Employee..."
             onChangeText={updateSearch}
             value={search}
             containerStyle={{backgroundColor:"rgba(0,0,0,0)",borderTopWidth:0,borderBottomWidth:0}}

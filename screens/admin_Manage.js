@@ -25,7 +25,7 @@ const admin_Manage = () => {
 
     return (
         
-        <ImageBackground source={require("../assets/backround.png")} style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
         <View style={{width:"85%",height:"95%",justifyContent: "space-between",}}>
                 <View style={{flexDirection:'row', width:"55%",justifyContent:"space-between",alignItems: 'center',}}>
                     <TouchableOpacity 
@@ -55,17 +55,17 @@ const admin_Manage = () => {
                     <View style={{flexDirection:"row",padding:10}}>
                         <View style={[Style.center,{flex:1}]}> 
                         {progress()} 
-                        <Text style={{color:"white",paddingTop:5,fontSize:12}}>Send Tip</Text>
+                        <Text style={{color:"white",paddingTop:5,fontSize:12}}>Payments Received</Text>
                         </View>
                         <View style={[Style.center,{flex:1}]}>
                         {progress()}
-                        <Text style={{color:"white",paddingTop:5,fontSize:12}}>Subscription Earning</Text>
+                        <Text style={{color:"white",paddingTop:5,fontSize:12}}>Number of Payments</Text>
                         </View>
                     </View>
                 </View>
 
                 <View style={{borderTopWidth:1, borderTopColor:"white",paddingTop:5,width:Dimensions.get("window").width,alignSelf: 'center',}}>
-                    <Text style={{color:"white",paddingLeft:"10%"}}>Total Tips by Category</Text>
+                    <Text style={{color:"white",paddingLeft:"10%"}}>Total Payments by Category</Text>
                     <View style={{flexDirection:"row",padding:10}}>
                         <View style={[Style.center,{flex:1}]}> 
                         {progress()} 
@@ -101,7 +101,7 @@ const admin_Manage = () => {
                 </View>
 
                 <View style={{borderTopWidth:1, borderTopColor:"white",paddingTop:5,width:Dimensions.get("window").width,alignSelf: 'center',}}>
-                    <Text style={{color:"white",paddingLeft:"10%"}}> Revenue per Tip</Text>
+                    <Text style={{color:"white",paddingLeft:"10%"}}> Growth Per Payment</Text>
                     <View style={{flexDirection:"row",padding:10}}>
                         <View style={[Style.center,{flex:1}]}> 
                         {progress()} 

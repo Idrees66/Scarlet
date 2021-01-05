@@ -45,10 +45,10 @@ const  customerEntry = () => {
 
 
     return (
-        <ImageBackground source={require("../assets/backround.png")} style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
         <View style={{width:"97%",height:"95%",}}>
         <SearchBar
-            placeholder="Search Customer..."
+            placeholder="Search..."
             onChangeText={updateSearch}
             value={search}
             containerStyle={{backgroundColor:"rgba(0,0,0,0)",borderTopWidth:0,borderBottomWidth:0}}

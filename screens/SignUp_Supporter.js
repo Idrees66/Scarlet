@@ -15,25 +15,16 @@ const Social = ({source,style})=>(
 )
 
 
-const SignUp_Individual = ({navigation}) => {
+
+
+const SignUp_Supporter = ({navigation}) => {
     const [accountType, setaccountType] = useState("")
 
     useEffect(() => {
-        Alert.alert("","By joining as an Individual you will have the capability to send & receive funds, track history & data analytics, and share users profiles.")
+        Alert.alert("","By joining as a Supporter you will have the capability to send funds, track your history, & share users profiles.")
     }, [])
 
-    // function handleLocationReq(value){
 
-    //     if(value=="Individual"){    
-    //         setaccountType("Individual")
-    //         Alert.alert("","By joining as an Individual you will have the capability to send & receive funds, track history & data analytics, and share users profiles.")
-    //     }
-    //     else {    
-    //         setaccountType("Supporter")
-    //         Alert.alert("","By joining as a Supporter you will have the capability to send funds, track your history, & share users profiles.")
-           
-    //     }
-    // }
     return (
         <ImageBackground source={require("../assets/animatedBg.gif")} style={[Style.container,]} >
        <View style={{flex:1,justifyContent:"space-between",}} >
@@ -67,27 +58,10 @@ const SignUp_Individual = ({navigation}) => {
             </KeyboardAvoidingView>
 
             <Animatable.View  animation="zoomIn" easing="ease-out" duration={2000}   style={{width:"90%",alignSelf: 'center',}}>
-            <Button text="NEXT" size="large" onPress={()=>Alert.alert("","Join as an Individual. Give, Work, Share, and Earn.")} />
+            <Button text="NEXT" size="large" onPress={()=>Alert.alert("","Join as a Supporter. Give and Share")} />
             
-           {/* <View style={{alignItems:"center",justifyContent: 'center',}}>
-                <RadioForm
-                        radio_props={[
-                            {label: "Individual", value: "Individual", },
-                            {label: 'Supporter', value: 'Supporter'},
-                            
-                        ]}
-                        initial={null}
-                        formHorizontal={true}
-                        animation={true}
-                        buttonSize={7}
-                        buttonColor={"white"}
-                        buttonOuterSize={20}
-                        borderWidth={0.1}
-                        labelWrapStyle={{backgroundColor: "yellow",border:2}}
-                        labelStyle={{fontSize: 15, color: "white",fontStyle:"italic",width:Dimensions.get('window').width/2.5}}
-                       // onPress={(value)=>console.log(value)}
-                         onPress={(value) => {handleLocationReq(value)}}
-           /> */}
+           {/* <View style={{alignItems:"center",justifyContent: 'center',}}> */}
+
             {/* <Text style={{alignSelf: 'center', color:"white"}} >or create with</Text>
                 <View style={{backgroundColor:"rgba(255,255,255,0.2)",flexDirection: 'row', width:"100%",padding:10,borderRadius:15 ,justifyContent:"space-around"}}>
                     <Social source={require("../assets/instagram.png")} style={Style.social}  />
@@ -104,9 +78,9 @@ const SignUp_Individual = ({navigation}) => {
 
             <Animatable.View  animation="fadeIn" easing="ease-out" duration={3000} delay={500} >
             <Text style={{alignSelf: 'center', color:"white"}} >Already have an account?</Text>
-            {/* {(accountType==="Supporter") ? ( <Button text="SIGN IN" size="small"  onPress={()=>navigation.navigate("Supporter_Menu")} />) : ( <Button text="SIGN IN" size="small"  onPress={()=>navigation.navigate("Individual_Menu")} />) } */}
-            <Button text="SIGN IN" size="small"  onPress={()=>navigation.navigate("Individual_Menu")} />
-            <Text style={{alignSelf: 'center', color:"white"}}>$1.99 per month </Text>
+            <Button text="SIGN IN" size="small"  onPress={()=>navigation.navigate("Supporter_Menu")} />
+           
+
 
             
             </Animatable.View>
@@ -115,6 +89,6 @@ const SignUp_Individual = ({navigation}) => {
     )
 }
 
-export default SignUp_Individual
+export default SignUp_Supporter
 
 const styles = StyleSheet.create({})

@@ -43,10 +43,10 @@ function barChart(){
 
     return (
         
-         <ImageBackground source={require("../assets/backround.png")}  style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
+         <ImageBackground source={require("../assets/animatedBg.gif")}  style={[{justifyContent:"center",flex:1,width:"100%",alignItems: 'center',}]} >
             <View style={{width:"90%",height:"95%",justifyContent:"space-around"}}>
                 <View style={{flexDirection:'row', width:"45%",justifyContent:"space-between",alignItems: 'center',}}>
-                    <TouchableOpacity 
+                    <TouchableOpacity onPress={()=>navigation.goBack()}
                      style={{backgroundColor:"#29AB87",padding:7,borderRadius:20}}>
                       <Image source={require("../assets/back4.png")} style={{width:20,height:20}}  />
                     </TouchableOpacity>
@@ -55,41 +55,51 @@ function barChart(){
 
                 <Text style={[Style.text,{fontSize:16}]}>Earning this year</Text>
 
-               
+                <Animatable.View  animation="zoomInUp" easing="ease-out" duration={3000}>
                 {barChart()}
+                </Animatable.View>
+                
 
       
 
                 <View style={{backgroundColor:"rgba(255,255,255,0.3)",height:80,borderRadius:20,flexDirection: 'row',justifyContent:"space-around"}}>
-                    <View style={[Style.center,{flex:1}]}>
-                        <Text style={{color:"white",textAlign:'center',fontSize:10}}>Total Earning</Text>
-                        <Text style={{color:"white",paddingTop:5}}>+2000</Text>
+                    <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
+                        <Text style={{color:"white",textAlign:'center',fontSize:14}}>Total Earning</Text>
+                        <Text style={{color:"white",paddingTop:5}}>$2000</Text>
                     </View>
-                    <View style={[Style.center,{flex:1}]}>
-                        <Text style={{color:"white",textAlign:'center',fontSize:10}}>This Week</Text>
-                        <Text style={{color:"white",paddingTop:5}}>+100</Text>
+                    <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
+                        <Text style={{color:"white",textAlign:'center',fontSize:14}}>Current Week</Text>
+                        {/* <Text style={{color:"white",textAlign:'center',fontSize:12}}>Week</Text> */}
+                        <Text style={{color:"white",paddingTop:5}}>$100</Text>
                     </View>
-                    <View style={[Style.center,{flex:1}]}>
+                    <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
                         <Text style={{color:"white",textAlign:'center',fontSize:10}}>Total Earnings this Month</Text>
-                        <Text style={{color:"white",paddingTop:5}}>+2000</Text>
+                        <Text style={{color:"white",paddingTop:5}}>$2000</Text>
                     </View>
-                    <View style={[Style.center,{flex:1}]}>
+                    <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
                         <Text style={{color:"white",textAlign:'center',fontSize:10}}>Total Earnings this Year</Text>
-                        <Text style={{color:"white",paddingTop:5}}>+3000</Text>
+                        <Text style={{color:"white",paddingTop:5}}>$3000</Text>
                     </View>
                 </View>
 
                 <View style={{flexDirection: 'row',width:"100%",justifyContent:"space-around"}}>
                     <View style={Style.center}> 
+                    <ImageBackground source={require("../assets/logo.png")} style={{width:120,height:120,alignItems:'center',alignSelf: 'center',justifyContent:"center"}}>
                     <View style={[Style.center,{},styles.circle]}>
-                        <Text style={[Style.text,{textAlign:"center",width:90}]}> My Average Tip Amount $</Text>
+                        <Text style={[Style.text,{textAlign:"center",width:90,fontSize:17}]}> My Average </Text>
                     </View>
-                    <Text style={[Style.text,{textAlign:"center",width:80}]}>2000</Text></View>
+                    </ImageBackground>
+                    <Text style={[Style.text,{textAlign:"center",width:80,fontWeight:"bold",fontSize:17,backgroundColor:"#2C3F4E",borderRadius:10}]}>2000</Text></View>
                     <View style={Style.center}>
+
+                    <ImageBackground source={require("../assets/logo.png")} style={{width:120,height:120,alignItems:'center',alignSelf: 'center',justifyContent:"center"}}>
                     <View style={[Style.center,{},styles.circle]}>
-                        <Text style={[Style.text,{textAlign:"center",width:80}]}>  My Service Rating</Text>
+                    <Text style={[Style.text,{textAlign:"center",width:80}]}>  My Service Rating</Text>
                     </View>
-                    <Text style={[Style.text,{textAlign:"center",width:80}]}>5</Text></View>
+                    </ImageBackground>
+                       
+                    
+                    <Text style={[Style.text,{textAlign:"center",width:40,fontWeight:"bold",fontSize:17,backgroundColor:"#2C3F4E",borderRadius:10}]}>5</Text></View>
                 </View>
 
             </View>
@@ -106,8 +116,8 @@ const styles = StyleSheet.create({
         borderRadius:60,
         borderColor:"white",
         borderWidth:1,
-        width:110,
-        height:110,
+        width:100,
+        height:100,
         margin:10,
         padding:10
     }

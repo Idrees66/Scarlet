@@ -1,11 +1,14 @@
 import React from 'react'
+import { Alert } from 'react-native';
 import { StyleSheet, Text, View,ImageBackground,Image,TouchableOpacity,TextInput, KeyboardAvoidingView  } from 'react-native'
+import * as Animatable from 'react-native-animatable'
 import Button from '../components/Button';
 import Style from "../Styles/GlobalStyles";
 
+
 const Bank_Detail = ({navigation}) => {
     return (
-        <ImageBackground source={require("../assets/bg.png")} style={[Style.container,{justifyContent:"center"}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[Style.container,{justifyContent:"center"}]} >
               <View style={{flex:1,justifyContent:"space-around"}} >
                   <Text style={[Style.h1,{alignSelf:"center"}]}>Payment</Text>
                   <Text style={[Style.h2,]}>Payment Methods</Text>
@@ -21,6 +24,11 @@ const Bank_Detail = ({navigation}) => {
                         <Text style={[Style.text,{padding:10}]}>Debit Card</Text>
                         </View>
                   </View>
+                  <TouchableOpacity style={{ width:"40%",alignSelf: 'center', flexDirection:"row",justifyContent:"space-between"}}>
+                      <Text style={{backgroundColor:"rgba(255,255,255,0.3)",borderRadius:10,color:"white",padding:5,paddingHorizontal:10,textAlign:"center"}} >Scan Card</Text>
+                      <Animatable.Image animation="pulse" easing="ease-out" iterationCount="infinite"
+                      source={require("../assets/camera.png")} style={{width:30,height:30}} />
+                  </TouchableOpacity >
 
                   <View>
                   <Text style={{ color:"white",paddingBottom:10}} >We also accept</Text>
@@ -31,7 +39,7 @@ const Bank_Detail = ({navigation}) => {
                     </View>
                   </View>
 
-                <View>
+                <Animatable.View animation="zoomIn" easing="ease-out" duration={2000} >
                     <View style={Style.inputContainer}>
                         <View style={{paddingTop:15,}}>
                         <Image source={require("../assets/credit-card.png")} style={{width:20,height:20}}  resizeMode="contain"  />
@@ -60,9 +68,9 @@ const Bank_Detail = ({navigation}) => {
                     </View>
                         
 
-                </View>
+                </Animatable.View >
 
-                <Button text="Verify" size="medium" onPress={()=>navigation.navigate("Plan")} />
+                <Button text="Verify" size="medium" onPress={()=>Alert.alert("Verification Code sent..")} />
               </View>
         </ImageBackground>
     )

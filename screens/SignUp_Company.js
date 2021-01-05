@@ -6,7 +6,7 @@ import * as Animatable from 'react-native-animatable';
 
 const SignUp = ({navigation}) => {
     return (
-        <ImageBackground source={require("../assets/bg.png")} style={[Style.container,]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[Style.container,]} >
        <Animatable.View animation="zoomIn" easing="ease-out" 
        style={{flex:1,justifyContent:"space-between",}} >
            <Animatable.View animation="slideInLeft" easing="ease-out" delay={500} >
@@ -47,7 +47,7 @@ const SignUp = ({navigation}) => {
 
             <View  >
             <Text style={{alignSelf: 'center', color:"white"}} >Already have an account?</Text>
-            <Button text="SIGN IN" size="small" />
+            <Button text="SIGN IN" size="small" onPress={()=>navigation.navigate("Admin_Dashboard")}  />
             <Text style={{alignSelf: 'center', color:"white"}}>Monthly Subscription $25USD </Text>
             <Text style={{alignSelf: 'center', color:"white"}}>and $2USD per Employee</Text>
             

@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
-import { StyleSheet, Text, View,ImageBackground,Image,TouchableOpacity,Dimensions,TextInput, KeyboardAvoidingView  } from 'react-native'
+import { Alert } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground,Image,TouchableOpacity,  Dimensions,TextInput, KeyboardAvoidingView  } from 'react-native'
 import * as Animatable from 'react-native-animatable';
 import Modal from 'react-native-modal';
 import Button from '../components/Button';
@@ -25,35 +26,43 @@ const Map = ({navigation}) => {
    
     }
 
+   function handlePress(){
+    navigation.navigate("Bank_Detail")
+    toggleModal()
+    }
+
     return (
-        <ImageBackground source={require("../assets/bg.png")} style={[{justifyContent:"center",flex:1,width:"100%"}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[{justifyContent:"center",flex:1,width:"100%"}]} >
    
        {/* ---------------------------------Model here-------------------------- */}
        <Modal isVisible={isModalVisible}  animationIn="zoomIn"  
             customBackdrop={<View style={{flex: 1}} />}>
-          <View style={styles.modelView}>
+          <View  style={styles.modelView} >
 
             <View style={{flexDirection:"row", justifyContent:"space-between"}}>
                 <Image source={require("../assets/img.png")}  />
                 <View>
                     <Text style={Style.h3}>John Smith</Text>
-                    <Text style={Style.h5}>+1 1234567890</Text>
-                    <Text style={Style.h5}>johnsmith@gmail.com</Text>
+                    {/* <Text style={Style.h5}>+1 1234567890</Text>
+                    <Text style={Style.h5}>johnsmith@gmail.com</Text> */}
                 </View>
                 <TouchableOpacity  onPress={toggleModal} >
                 <Image source={require("../assets/cross.png")} style={{padding:8}}  />
                 </TouchableOpacity>
             </View>
 
-            <View style={{flexDirection: 'row',borderBottomWidth:1,borderColor:"white",width:"40%"}}>
+            <View style={{flexDirection: 'row',borderBottomWidth:1,borderColor:"white",width:"50%"}}>
                 <Text style={[Style.h4,{color:"gray"}]}>$</Text>
-                <TextInput placeholder="Tip Amount" style={{color:"white",fontSize:16,paddingLeft:10}} placeholderTextColor="gray" />
+                <TextInput placeholder="Enter Amount" style={{color:"white",fontSize:16,paddingLeft:10}} placeholderTextColor="gray" />
             </View>
 
             <View>
                 <View style={{flexDirection: 'row',}}>
-                <Text style={Style.h4}>Transaction fee:</Text>
-                <Text  style={{color:"gray",fontSize:16,paddingLeft:10}}>2.5%</Text>
+                <Text style={[Style.h4,{color:"orange"}]}>Transaction fee:</Text>
+                <TouchableOpacity onPress={()=>Alert.alert("","Covering the transaction fee ensures they receive your full support!")} style={{marginLeft:10,borderColor:"white",borderWidth:1,borderRadius:20,justifyContent:"center"}}>
+                    <Text style={{color:"white",paddingHorizontal:8, paddingVertical:0,fontWeight:"bold",fontSize:14}}>i</Text>
+                </TouchableOpacity>
+                <Text  style={{color:"orange",fontSize:16,paddingLeft:10}}>2.5%</Text>
                 </View>
                 <Text style={{color:"white",fontSize:16}}>Include with tip amount</Text>
             </View>
@@ -67,11 +76,22 @@ const Map = ({navigation}) => {
              {rating(4)}
             </View>
 
-            <View style={{flexDirection: "row-reverse",}}>
+        <View style={{flexDirection:"row"}}>
+            <View style={{flex:1}}>
+            <TouchableOpacity style={{borderColor:"white",borderWidth:1,width:70,padding:3,borderRadius:10,alignItems: 'center',}}>
+               <Text style={{color:"white"}}>Share</Text>
+           </TouchableOpacity>
+            </View>
+
+           <View style={{flex:1,flexDirection: "row-reverse",}}>
             <Text  style={{color:"white",fontSize:18,}}>5</Text>
             <Image  source={require("../assets/star.png")} style={{width:15,height:15,alignSelf: 'center'}}  />
             <Text  style={{color:"white",fontSize:15,marginRight:20}}>Total Rating :</Text>
            </View>
+        </View>
+
+
+           
 
            <View style={[Style.inputContainer,{}]}>
                 <TextInput placeholder="Add your own Review" style={[Style.textInput,{width:"90%"}]} placeholderTextColor="gray" />
@@ -79,9 +99,9 @@ const Map = ({navigation}) => {
 
   
 
-            <Button text="Confirm" size="large" />
+            <Button text="Confirm" size="large" onPress={()=>handlePress()} />
 
-          </View>
+          </View >
         </Modal>
             {/* ---------------------------------Model here-------------------------- */}
 

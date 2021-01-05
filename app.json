@@ -16,11 +16,18 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
+
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "scarlet.com",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "scarlet.com",
+      "versionCode": 1
     }
   }
 }

@@ -11,7 +11,7 @@ const view2 = <Text style={{ flex: 1, fontSize: 16, color:"white" }}>Give.Work.S
 
 const SignIn = ({navigation}) => {
     return (
-        <ImageBackground source={require("../assets/bg.png")} style={[styles.container,{justifyContent:"space-between"}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={[styles.container,{justifyContent:"space-between"}]} >
            <Animatable.View animation="fadeInLeft" easing="ease-out" >
             <Text style={[Style.h1,{width:"60%"}]}>Hello, </Text>
             <Text style={[Style.h1,{width:"80%"}]}>Welcome to Goal.!!</Text>
@@ -34,7 +34,7 @@ const SignIn = ({navigation}) => {
 
             <Animatable.View  animation="fadeIn" easing="ease-out" duration={3000} 
              style={{width:"80%",alignSelf: 'center',}}>
-            <Button text="SIGN IN" size="large"  />
+            <Button text="SIGN IN" size="large" onPress={()=> navigation.navigate("Admin_Dashboard") } />
             <Text style={{alignSelf: 'center', color:"white",textAlign:"center",paddingBottom:5}} >By continuing, you agree to our User Agreement and Privacy Policy.</Text>
             <Text style={{alignSelf: 'center', color:"white"}} >Forgot password?</Text>
             </Animatable.View>
