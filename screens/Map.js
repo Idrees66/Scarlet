@@ -1,15 +1,16 @@
 import React,{useState} from 'react'
 import { Alert } from 'react-native';
-import { StyleSheet, Text, View,ImageBackground,Image,TouchableOpacity,  Dimensions,TextInput, KeyboardAvoidingView  } from 'react-native'
+import { StyleSheet,Switch, Text, View,ImageBackground,Image,TouchableOpacity,  Dimensions,TextInput, KeyboardAvoidingView  } from 'react-native'
 import * as Animatable from 'react-native-animatable';
 import Modal from 'react-native-modal';
 import Button from '../components/Button';
 import Style from "../Styles/GlobalStyles";
 
 const Map = ({navigation}) => {
-
+   
     const [isModalVisible, setModalVisible] = useState(false);
-  
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const toggleModal = () => {
       setModalVisible(!isModalVisible);
     };
@@ -58,13 +59,22 @@ const Map = ({navigation}) => {
 
             <View>
                 <View style={{flexDirection: 'row',}}>
-                <Text style={[Style.h4,{color:"orange"}]}>Transaction fee:</Text>
+                <Text style={[Style.h4,{color:"orange",fontSize:16}]}>Transaction fee:</Text>
                 <TouchableOpacity onPress={()=>Alert.alert("","Covering the transaction fee ensures they receive your full support!")} style={{marginLeft:10,borderColor:"white",borderWidth:1,borderRadius:20,justifyContent:"center"}}>
                     <Text style={{color:"white",paddingHorizontal:8, paddingVertical:0,fontWeight:"bold",fontSize:14}}>i</Text>
                 </TouchableOpacity>
                 <Text  style={{color:"orange",fontSize:16,paddingLeft:10}}>2.5%</Text>
                 </View>
+                <View style={{flexDirection:"row"}}>
                 <Text style={{color:"white",fontSize:16}}>Include with tip amount</Text>
+                <Switch
+                    trackColor={{ false: "#767577", true: "#f4f3f4" }}
+                    thumbColor={isEnabled ? "orange" : "#f4f3f4"}
+                    ios_backgroundColor="#3e3e3e"
+                    onValueChange={toggleSwitch}
+                    value={isEnabled}
+                />
+                </View>
             </View>
 
            <View style={{alignItems: 'center',justifyContent: 'center',}}>
@@ -78,8 +88,8 @@ const Map = ({navigation}) => {
 
         <View style={{flexDirection:"row"}}>
             <View style={{flex:1}}>
-            <TouchableOpacity style={{borderColor:"white",borderWidth:1,width:70,padding:3,borderRadius:10,alignItems: 'center',}}>
-               <Text style={{color:"white"}}>Share</Text>
+            <TouchableOpacity style={{borderColor:"white",borderWidth:1,width:90,padding:3,borderRadius:10,alignItems: 'center',}}>
+               <Text style={{color:"white"}}>Share Now</Text>
            </TouchableOpacity>
             </View>
 

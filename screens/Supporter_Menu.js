@@ -18,7 +18,7 @@ const Supporter_Menu = ({navigation}) => {
             <View style={{width:"80%",marginTop:20}}>
                 <Animatable.View animation="slideInLeft" easing="ease-out">
                     <Text style={{color:"white",fontSize:22,fontWeight:"bold",paddingTop:20}}>Welcome</Text>
-                    <Text style={{color:"white",fontSize:22,fontWeight:"bold",paddingBottom:20}}>{name}..!!</Text>
+                    <Text style={{color:"white",fontSize:22,fontWeight:"bold",paddingBottom:20}}>{name}!</Text>
                     <TouchableOpacity style={{borderWidth:1,borderRadius:10,borderColor:"white",width:70,alignItems:"center" }}>
                         <Text style={{color:"white",fontSize:11,padding:3}}>UPGRADE</Text>
                     </TouchableOpacity>

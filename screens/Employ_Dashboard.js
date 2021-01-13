@@ -68,16 +68,18 @@ function barChart(){
                         <Text style={{color:"white",paddingTop:5}}>$2000</Text>
                     </View>
                     <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
-                        <Text style={{color:"white",textAlign:'center',fontSize:14}}>Current Week</Text>
-                        {/* <Text style={{color:"white",textAlign:'center',fontSize:12}}>Week</Text> */}
+                        <Text style={{color:"white",textAlign:'center',fontSize:13}}>This </Text>
+                        <Text style={{color:"white",textAlign:'center',fontSize:13}}>Week</Text>
                         <Text style={{color:"white",paddingTop:5}}>$100</Text>
                     </View>
                     <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
-                        <Text style={{color:"white",textAlign:'center',fontSize:10}}>Total Earnings this Month</Text>
+                        <Text style={{color:"white",textAlign:'center',fontSize:13}}>Total</Text>
+                        <Text style={{color:"white",textAlign:'center',fontSize:13}}> Month</Text>
                         <Text style={{color:"white",paddingTop:5}}>$2000</Text>
                     </View>
                     <View style={{flex:1,height:60,alignSelf: 'center',justifyContent: "space-between",alignItems: 'center',}}>
-                        <Text style={{color:"white",textAlign:'center',fontSize:10}}>Total Earnings this Year</Text>
+                        <Text style={{color:"white",textAlign:'center',fontSize:13}}>Total</Text>
+                        <Text style={{color:"white",textAlign:'center',fontSize:13}}>Year</Text>
                         <Text style={{color:"white",paddingTop:5}}>$3000</Text>
                     </View>
                 </View>
@@ -86,7 +88,7 @@ function barChart(){
                     <View style={Style.center}> 
                     <ImageBackground source={require("../assets/logo.png")} style={{width:120,height:120,alignItems:'center',alignSelf: 'center',justifyContent:"center"}}>
                     <View style={[Style.center,{},styles.circle]}>
-                        <Text style={[Style.text,{textAlign:"center",width:90,fontSize:17}]}> My Average </Text>
+                        <Text style={[Style.text,{textAlign:"center",width:90,fontSize:15}]}> My    Average </Text>
                     </View>
                     </ImageBackground>
                     <Text style={[Style.text,{textAlign:"center",width:80,fontWeight:"bold",fontSize:17,backgroundColor:"#2C3F4E",borderRadius:10}]}>2000</Text></View>

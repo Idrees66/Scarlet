@@ -16,7 +16,7 @@ const Individual_Menu = ({navigation}) => {
             </ImageBackground>
             <Animatable.View animation="slideInLeft" easing="ease-out">
                     <Text style={{color:"white",fontSize:22,fontWeight:"bold",paddingTop:20}}>Welcome</Text>
-                    <Text style={{color:"white",fontSize:22,fontWeight:"bold"}}>{name}..!!</Text>
+                    <Text style={{color:"white",fontSize:22,fontWeight:"bold"}}>{name}!</Text>
                 </Animatable.View>
               <View style={{paddingTop:"10%",justifyContent:"space-around",height:250,flex:1,flexDirection:"row"}}>
               {/* <Animatable.View  animation="pulse" easing="ease-out" iterationCount='infinite'> */}
