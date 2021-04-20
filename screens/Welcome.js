@@ -8,7 +8,7 @@ import Style from "../Styles/GlobalStyles";
 
 const Welcome = ({navigation}) => {
     return (
-        <ImageBackground source={require("../assets/animatedBg.gif")} style={[Style.container,{justifyContent:"center"}]} >
+        <ImageBackground source={require("../assets/animatedBg.gif")} style={{flex:1, paddingHorizontal:30 ,justifyContent:"space-between"}} >
               <View style={{flex:4,justifyContent:"space-around"}} >
                 
 
